@@ -5,25 +5,19 @@ from pathlib import Path
 
 pygame.init()
 
-# -----------------------------
-# НАСТРОЙКИ ОКНА
-# -----------------------------
+#ОКНА
 WIDTH = 1000
 HEIGHT = 650
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Visual Novel Prototype")
 clock = pygame.time.Clock()
 
-# -----------------------------
-# ПУТИ К ФАЙЛАМ
-# -----------------------------
+# ПУТЬ К ФАЙЛАМ
 BASE_DIR = Path(__file__).resolve().parent
 CHARACTER_PATH = BASE_DIR / "assets" / "characters" / "visitor.png"
 BACKGROUND_PATH = BASE_DIR / "assets" / "backgrounds" / "school.png"
 
-# -----------------------------
 # ЦВЕТА
-# -----------------------------
 WHITE = (245, 245, 245)
 BLACK = (20, 20, 20)
 DARK = (18, 18, 18)
@@ -42,26 +36,20 @@ BOX_TEXT_COLOR = (240, 240, 240)
 BOX_NAME_COLOR = (255, 255, 255)
 BOX_HINT_COLOR = (200, 200, 200)
 
-# -----------------------------
 # ШРИФТЫ
-# -----------------------------
 title_font = pygame.font.SysFont("arial", 48, bold=True)
 name_font = pygame.font.SysFont("arial", 32, bold=True)
 text_font = pygame.font.SysFont("arial", 28)
 small_font = pygame.font.SysFont("arial", 22)
 
-# -----------------------------
-# ЗАГРУЗКА ИЗОБРАЖЕНИЙ
-# -----------------------------
+# ТУТ Я ЗАГРУЖАЮ ИЗОБРАЖЕНИЯ
 character_img = pygame.image.load(str(CHARACTER_PATH)).convert_alpha()
 character_img = pygame.transform.smoothscale(character_img, (220, 420))
 
 background_img = pygame.image.load(str(BACKGROUND_PATH)).convert()
 background_img = pygame.transform.smoothscale(background_img, (WIDTH, HEIGHT))
 
-# -----------------------------
-# ДАННЫЕ ИГРЫ
-# -----------------------------
+# ОСНОВА(данные) ИГРЫ
 game_state = "menu"
 current_node = "intro_1"
 
@@ -69,9 +57,7 @@ trust = 0
 knowledge = 0
 last_choice = ""
 
-# -----------------------------
-# СТРУКТУРА СЦЕНАРИЯ
-# -----------------------------
+#сценарий
 story = {
     "intro_1": {
         "speaker": "Рассказчик",
@@ -189,10 +175,7 @@ story = {
     }
 }
 
-
-# -----------------------------
-# КЛАСС КНОПКИ
-# -----------------------------
+#КНОПКИ
 class Button:
     def __init__(self, x, y, w, h, text):
         self.rect = pygame.Rect(x, y, w, h)
@@ -212,10 +195,7 @@ class Button:
             return self.rect.collidepoint(event.pos)
         return False
 
-
-# -----------------------------
-# ФУНКЦИИ РИСОВАНИЯ
-# -----------------------------
+#ФУНКЦИИ РИСОВАНИЯ
 def draw_background():
     screen.blit(background_img, (0, 0))
 
@@ -394,16 +374,11 @@ def reset_game():
     knowledge = 0
     last_choice = ""
 
-
-# -----------------------------
-# КНОПКИ МЕНЮ
-# -----------------------------
+# кнопки в меню
 start_button = Button(360, 360, 280, 70, "START")
 exit_button = Button(360, 450, 280, 70, "EXIT")
 
-# -----------------------------
-# ОСНОВНОЙ ЦИКЛ
-# -----------------------------
+# ОСНОВНОЙ ЦИКЛ ИГРЫ
 running = True
 
 while running:

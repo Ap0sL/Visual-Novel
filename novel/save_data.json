@@ -1,0 +1,14 @@
+{
+  "game_state": "story",
+  "current_node": "score_path",
+  "trust": 0,
+  "knowledge": 2,
+  "fear": 0,
+  "noise": 0,
+  "time_left": 6,
+  "last_choice": "Молча проверить дверь",
+  "inventory": [
+    "map",
+    "key"
+  ]
+}

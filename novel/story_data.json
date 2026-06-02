@@ -1,0 +1,318 @@
+{
+  "intro_1": {
+    "speaker": "Рассказчик",
+    "text": "Ты приходишь в себя в пустом школьном коридоре.",
+    "background": "corridor",
+    "next": "intro_2"
+  },
+  "intro_2": {
+    "speaker": "Рассказчик",
+    "text": "Свет мигает, а вдалеке раздаются чьи-то медленные шаги.",
+    "background": "corridor",
+    "next": "intro_3"
+  },
+  "intro_3": {
+    "speaker": "Неизвестный голос",
+    "text": "Если хочешь выбраться отсюда, не стой на месте.",
+    "background": "corridor",
+    "next": "choice_1"
+  },
+  "choice_1": {
+    "speaker": "Рассказчик",
+    "text": "Что ты сделаешь первым?",
+    "background": "corridor",
+    "choices": [
+      {
+        "text": "Пойти на странный звук",
+        "next": "plot_path",
+        "trust": 1, "knowledge": 0, "fear": 1, "noise": 1, "time": -1
+      },
+      {
+        "text": "Осмотреть коридор вокруг",
+        "next": "system_path",
+        "trust": 0, "knowledge": 1, "fear": 0, "noise": 0, "time": -1,
+        "item": "map"
+      }
+    ]
+  },
+  "plot_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты идешь вперед, стараясь не показывать страх.",
+    "background": "corridor",
+    "next": "middle_1"
+  },
+  "system_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты замечаешь следы на полу и приоткрытую дверь сбоку.",
+    "background": "corridor",
+    "next": "middle_1"
+  },
+  "middle_1": {
+    "speaker": "Рассказчик",
+    "text": "В конце коридора что-то шевельнулось.",
+    "background": "corridor",
+    "next": "choice_2"
+  },
+  "choice_2": {
+    "speaker": "Рассказчик",
+    "text": "Как поступить?",
+    "background": "corridor",
+    "choices": [
+      {
+        "text": "Окликнуть того, кто там стоит",
+        "next": "character_path",
+        "trust": 1, "knowledge": 0, "fear": 1, "noise": 2, "time": -1
+      },
+      {
+        "text": "Молча проверить дверь",
+        "next": "score_path",
+        "trust": 0, "knowledge": 1, "fear": 0, "noise": 0, "time": -1,
+        "item": "key"
+      }
+    ]
+  },
+  "character_path": {
+    "speaker": "Рассказчик",
+    "text": "В ответ слышится только эхо, но шаги становятся ближе.",
+    "background": "corridor",
+    "next": "middle_2"
+  },
+  "score_path": {
+    "speaker": "Рассказчик",
+    "text": "За дверью ты находишь схему здания и путь к лестнице.",
+    "background": "corridor",
+    "next": "middle_2"
+  },
+  "middle_2": {
+    "speaker": "Рассказчик",
+    "text": "Теперь ты точно знаешь: в коридоре кроме тебя есть кто-то еще.",
+    "background": "corridor",
+    "next": "choice_3"
+  },
+  "choice_3": {
+    "speaker": "Рассказчик",
+    "text": "Последнее решение:",
+    "background": "corridor",
+    "choices": [
+      {
+        "text": "Бежать к лестнице",
+        "next": "design_path",
+        "trust": 1, "knowledge": 0, "fear": 1, "noise": 2, "time": -1
+      },
+      {
+        "text": "Спрятаться и дождаться тишины",
+        "next": "code_path",
+        "trust": 0, "knowledge": 1, "fear": -1, "noise": 0, "time": -2,
+        "item": "note"
+      }
+    ]
+  },
+  "design_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты срываешься с места, пока тень за спиной начинает двигаться быстрее.",
+    "background": "corridor",
+    "next": "stairs_path"
+  },
+  "code_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты замираешь в темноте и стараешься не издать ни звука.",
+    "background": "corridor",
+    "next": "library_path"
+  },
+  "stairs_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты несешься к лестнице. Перила холодные, ступени мокрые, а за спиной скребет что-то металлическое.",
+    "background": "stairs",
+    "next": "stairs_choice"
+  },
+  "stairs_choice": {
+    "speaker": "Рассказчик",
+    "text": "На площадке две двери: одна ведет к аварийному выходу, другая - в темное крыло школы.",
+    "background": "stairs",
+    "choices": [
+      {
+        "text": "Открыть аварийную дверь ключом",
+        "next": "exit_door",
+        "trust": 1, "knowledge": 1, "fear": -1, "noise": 1, "time": -1,
+        "requires": "key"
+      },
+      {
+        "text": "Сверить путь с планом школы",
+        "next": "map_route",
+        "trust": 0, "knowledge": 2, "fear": 0, "noise": 0, "time": -1,
+        "requires": "map"
+      },
+      {
+        "text": "Толкнуть дверь плечом",
+        "next": "loud_route",
+        "trust": 1, "knowledge": 0, "fear": 2, "noise": 3, "time": -2
+      }
+    ]
+  },
+  "library_path": {
+    "speaker": "Рассказчик",
+    "text": "Ты проскальзываешь в библиотеку. Между стеллажами пахнет пылью, мокрой бумагой и чем-то озоновым.",
+    "background": "library",
+    "next": "library_choice"
+  },
+  "library_choice": {
+    "speaker": "Рассказчик",
+    "text": "На столе лежит фонарик, а на доске мелом написано: 'Не верь первому звонку'.",
+    "background": "library",
+    "choices": [
+      {
+        "text": "Взять фонарик",
+        "next": "flashlight_scene",
+        "trust": 0, "knowledge": 1, "fear": -1, "noise": 0, "time": -1,
+        "item": "flashlight"
+      },
+      {
+        "text": "Прочитать записку внимательнее",
+        "next": "note_scene",
+        "trust": 0, "knowledge": 2, "fear": 0, "noise": 0, "time": -1,
+        "requires": "note"
+      },
+      {
+        "text": "Сразу выйти через запасной проход",
+        "next": "silent_route",
+        "trust": 1, "knowledge": 0, "fear": 1, "noise": 1, "time": -1
+      }
+    ]
+  },
+  "exit_door": {
+    "speaker": "Рассказчик",
+    "text": "Ключ подходит не сразу. Замок сопротивляется, затем щелкает, и в щель врывается холодный воздух.",
+    "background": "stairs",
+    "next": "alarm_scene"
+  },
+  "map_route": {
+    "speaker": "Рассказчик",
+    "text": "На плане ты замечаешь служебный коридор за лестницей. Он длиннее, зато обходит место, откуда доносятся шаги.",
+    "background": "stairs",
+    "next": "alarm_scene"
+  },
+  "loud_route": {
+    "speaker": "Рассказчик",
+    "text": "Дверь поддается с глухим ударом. Где-то внизу тут же просыпается звонок, хотя уроки давно закончились.",
+    "background": "stairs",
+    "next": "alarm_scene"
+  },
+  "flashlight_scene": {
+    "speaker": "Рассказчик",
+    "text": "Фонарик моргает слабым желтым светом. На полу проявляются следы, ведущие не к выходу, а к кабинету директора.",
+    "background": "library",
+    "next": "principal_choice"
+  },
+  "note_scene": {
+    "speaker": "Рассказчик",
+    "text": "В записке сказано, что звонок повторяется три раза. После третьего коридор пустеет ровно на минуту.",
+    "background": "library",
+    "next": "principal_choice"
+  },
+  "silent_route": {
+    "speaker": "Рассказчик",
+    "text": "Ты выходишь через узкий проход между стеллажами. Пол скрипит, но шаги в коридоре на мгновение отдаляются.",
+    "background": "library",
+    "next": "principal_choice"
+  },
+  "alarm_scene": {
+    "speaker": "Рассказчик",
+    "text": "Звонок режет воздух. В окнах отражается не твое лицо, а силуэт в школьной форме, стоящий прямо за плечом.",
+    "background": "corridor",
+    "next": "last_choice"
+  },
+  "principal_choice": {
+    "speaker": "Рассказчик",
+    "text": "У кабинета директора дверь приоткрыта. Внутри слышен старый магнитофон: он повторяет твое имя.",
+    "background": "corridor",
+    "choices": [
+      {
+        "text": "Осветить кабинет фонариком",
+        "next": "truth_scene",
+        "trust": 0, "knowledge": 2, "fear": -1, "noise": 0, "time": -1,
+        "requires": "flashlight"
+      },
+      {
+        "text": "Ждать третьего звонка",
+        "next": "timed_escape",
+        "trust": 0, "knowledge": 2, "fear": 0, "noise": 0, "time": -1,
+        "requires": "note"
+      },
+      {
+        "text": "Захлопнуть дверь и бежать",
+        "next": "panic_escape",
+        "trust": 2, "knowledge": 0, "fear": 2, "noise": 2, "time": -3
+      }
+    ]
+  },
+  "truth_scene": {
+    "speaker": "Рассказчик",
+    "text": "Луч фонаря выхватывает журнал посещений. Последняя строка написана сегодняшней датой, но твоей рукой.",
+    "background": "corridor",
+    "next": "last_choice"
+  },
+  "timed_escape": {
+    "speaker": "Рассказчик",
+    "text": "Ты считаешь удары сердца. После третьего звонка коридор пустеет, словно школа задержала дыхание.",
+    "background": "corridor",
+    "next": "last_choice"
+  },
+  "panic_escape": {
+    "speaker": "Рассказчик",
+    "text": "Ты бежишь, не разбирая дороги. Двери хлопают одна за другой, и каждая звучит как ответ на твой страх.",
+    "background": "corridor",
+    "next": "last_choice"
+  },
+  "last_choice": {
+    "speaker": "Рассказчик",
+    "text": "До выхода осталось несколько шагов. Но школьный коридор вытягивается, будто не хочет отпускать тебя.",
+    "background": "corridor",
+    "choices": [
+      {
+        "text": "Сохранять тишину и идти по памяти",
+        "next": "quiet_final",
+        "trust": 0, "knowledge": 1, "fear": -1, "noise": -1, "time": -1
+      },
+      {
+        "text": "Рвануть к свету у двери",
+        "next": "brave_final",
+        "trust": 2, "knowledge": 0, "fear": 1, "noise": 2, "time": -1
+      },
+      {
+        "text": "Использовать все, что удалось найти",
+        "next": "prepared_final",
+        "trust": 1, "knowledge": 1, "fear": -2, "noise": 0, "time": -1,
+        "requires_all": ["map", "key", "note", "flashlight"]
+      }
+    ]
+  },
+  "quiet_final": {
+    "speaker": "Рассказчик",
+    "text": "Ты идешь медленно, почти не дыша. Когда ручка двери оказывается в ладони, шаги за спиной исчезают.",
+    "background": "corridor",
+    "next": "final_check"
+  },
+  "brave_final": {
+    "speaker": "Рассказчик",
+    "text": "Ты бросаешься вперед. Свет ударяет в глаза, и на секунду кажется, что весь коридор разбивается на осколки.",
+    "background": "corridor",
+    "next": "final_check"
+  },
+  "prepared_final": {
+    "speaker": "Рассказчик",
+    "text": "Карта, ключ, записка и свет фонаря складываются в один путь. Теперь школа уже не лабиринт, а задача.",
+    "background": "corridor",
+    "next": "final_check"
+  },
+  "time_out": {
+    "speaker": "Рассказчик",
+    "text": "Ты слишком долго искал выход. Звонок звучит снова, и коридор меняется быстрее, чем ты успеваешь сделать шаг.",
+    "background": "corridor",
+    "next": "final_check"
+  },
+  "final_check": {
+    "speaker": "Рассказчик",
+    "text": "Шаги уже совсем рядом. Сейчас все решится.",
+    "background": "corridor"
+  }
+}

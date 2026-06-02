@@ -1,0 +1,14 @@
+{
+  "current_node": "time_out",
+  "trust": 3,
+  "knowledge": 3,
+  "fear": 2,
+  "noise": 4,
+  "time_left": 0,
+  "last_choice": "Захлопнуть дверь и бежать",
+  "inventory": [
+    "map",
+    "note",
+    "flashlight"
+  ]
+}
